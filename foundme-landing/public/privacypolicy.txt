@@ -1,0 +1,12 @@
+Effective Date: July 18, 2026
+
+1. Collection of Information
+FoundMe is designed as a local utility application.
+We do not collect, transmit, store, or share any personal data, device information, or user identifiers.
+Any contact details, names, or strings you configure for your lock screen widgets or Siri shortcuts remain strictly on your local iOS device and are never sent to external servers.
+
+2. Third-Party Services
+The application does not integrate any third-party analytics, tracking frameworks, or advertising SDKs.
+
+3. Contact
+If you have any questions regarding this policy, you can reach out to us at foundme@patchindustries.com
