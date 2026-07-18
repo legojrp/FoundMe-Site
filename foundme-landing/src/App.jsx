@@ -9,48 +9,45 @@ export default function App() {
       
       {/* HEADER / TOP NAV */}
       <header className="flex justify-between items-center w-full">
-        <div className="flex items-center gap-3">
-        </div>
-        <span className="text-xs font-mono text-zinc-500 uppercase tracking-widest border border-zinc-800 px-3 py-1">
+        <div className="flex items-center gap-3"></div>
+        <span className="text-xs font-mono text-zinc-500 uppercase tracking-widest border border-zinc-800 px-3 py-1 rounded-md">
           v1.0.0
         </span>
       </header>
 
       {/* MAIN HERO CONTENT */}
-      <main className="w-full max-w-6xl mx-auto my-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-4 items-center py-12 lg:py-0">
+      {/* Changed to strict Grid with w-full to force 2 columns on desktop */}
+      <main className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center justify-between gap-12 py-16 md:py-12">
         
         {/* LEFT COLUMN: TEXT & CTAs */}
-        <div className="flex flex-col items-start space-y-8 z-10">
+        <div className="flex flex-col items-start space-y-8 z-10 w-full">
           <div className="space-y-4">
             <h1 className="text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter text-white leading-none">
-              FoundMe.
+              FoundMe
             </h1>
             <div className="flex items-center gap-4 text-lg md:text-xl font-medium tracking-tight text-zinc-500">
               <span className="w-8 h-[1px] bg-zinc-700" />
-              <h2>Lock screen recovery</h2>
+              <h2>Lock Screen Recovery</h2>
             </div>
           </div>
 
           <p className="text-base md:text-lg text-zinc-400 font-normal max-w-md leading-relaxed tracking-wide">
-            Turn your iOS lock screen into a secure recovery hub. Place native 
-            contact cards and hands-free Siri voice bypass scripts directly 
-            onto your locked device—ensuring it always finds its way home 
-            without exposing your passcode.
+           By the time you lose it, it’s too late. Customize your lock screen today so your phone always finds home.
           </p>
 
-          {/* ACTION BUTTONS (Grouped Together) */}
+          {/* ACTION BUTTONS */}
           <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
             {appStoreUrl ? (
               <a 
                 href={appStoreUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-8 py-4 text-sm font-bold tracking-wide text-[#09090b] bg-white transition-colors hover:bg-zinc-300"
+                className="inline-flex items-center justify-center px-8 py-4 text-sm font-bold tracking-wide text-[#09090b] bg-white transition-colors hover:bg-zinc-300 rounded-lg whitespace-nowrap"
               >
                 Download on App Store
               </a>
             ) : (
-              <div className="inline-flex items-center justify-center px-8 py-4 text-sm font-semibold tracking-wide text-zinc-500 bg-zinc-900 border border-zinc-800 cursor-not-allowed">
+              <div className="inline-flex items-center justify-center px-8 py-4 text-sm font-semibold tracking-wide text-zinc-500 bg-zinc-900 border border-zinc-800 rounded-lg cursor-not-allowed whitespace-nowrap">
                 <span className="flex items-center gap-2">
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -60,10 +57,10 @@ export default function App() {
               </div>
             )}
 
-            {/* GET IN TOUCH - Prominent Secondary Button */}
+            {/* GET IN TOUCH */}
             <a 
               href={`mailto:${contactEmail}?subject=FoundMe%20Inquiry`}
-              className="group inline-flex items-center justify-center px-8 py-4 text-sm font-semibold tracking-wide text-white bg-zinc-800/50 hover:bg-zinc-800 border border-zinc-700 transition-all duration-200"
+              className="group inline-flex items-center justify-center px-8 py-4 text-sm font-semibold tracking-wide text-white bg-zinc-800/50 hover:bg-zinc-800 border border-zinc-700 rounded-lg transition-all duration-200 whitespace-nowrap"
             >
               Get in Touch
               <svg 
@@ -79,38 +76,45 @@ export default function App() {
         </div>
 
         {/* RIGHT COLUMN: APP SCREENSHOTS */}
-        <div className="relative w-full flex justify-center lg:justify-end items-center gap-4 sm:gap-6 mt-4 lg:mt-0">
+        <div className="w-full relative flex justify-center md:justify-end items-center gap-4 sm:gap-6 mt-12 md:mt-0">
           
-          {/* Screenshot 1 (Scaled down to precise iPhone 17 Pro Max curve) */}
-          <div className="relative w-[40%] max-w-[200px] aspect-[1320/2868] bg-zinc-900 border border-zinc-800 rounded-[24px] overflow-hidden shadow-2xl flex items-center justify-center">
-            
+          {/* Screenshot 1 */}
+          <div className="relative w-[45%] max-w-[200px] aspect-[1320/2868] bg-zinc-900 border border-zinc-800 rounded-[24px] overflow-hidden shadow-2xl flex items-center justify-center shrink-0">
             <img 
               src="/screenshot-1.png" 
               alt="FoundMe App Lock Screen" 
               className="absolute inset-0 w-full h-full object-cover" 
             />
-            
           </div>
 
-          {/* Screenshot 2 (Staggered) */}
-          <div className="relative w-[40%] max-w-[200px] aspect-[1320/2868] bg-zinc-900 border border-zinc-800 rounded-[24px] overflow-hidden shadow-2xl flex items-center justify-center mt-12 md:mt-16">
-            
+          {/* Screenshot 2 */}
+          <div className="relative w-[45%] max-w-[200px] aspect-[1320/2868] bg-zinc-900 border border-zinc-800 rounded-[24px] overflow-hidden shadow-2xl flex items-center justify-center mt-12 sm:mt-16 shrink-0">
             <img 
               src="/screenshot-2.png" 
               alt="FoundMe App Interface" 
               className="absolute inset-0 w-full h-full object-cover" 
             />
-            
           </div>
           
         </div>
       </main>
 
       {/* FOOTER */}
-      <footer className="w-full flex justify-between items-center border-t border-zinc-900 pt-8 mt-8">
-        <p className="text-sm text-zinc-600 font-medium w-full text-center md:text-left">
+      <footer className="w-full flex flex-col-reverse md:flex-row justify-between items-center gap-4 border-t border-zinc-900 pt-8 mt-12">
+        <p className="text-sm text-zinc-600 font-medium text-center md:text-left">
           &copy; {new Date().getFullYear()} John Patch. All rights reserved.
         </p>
+        
+        <div className="flex items-center">
+          <a 
+            href="https://foundme.patchindustries.com/privacypolicy.txt" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-sm text-zinc-600 font-medium hover:text-white transition-colors duration-200"
+          >
+            Privacy Policy
+          </a>
+        </div>
       </footer>
 
     </div>
